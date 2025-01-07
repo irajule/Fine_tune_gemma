@@ -57,9 +57,6 @@ articles_df = articles_dataset["train"].to_pandas()
 # Concatenate the datasets
 combined_df = pd.concat([poetry_df, articles_df], ignore_index=True)
 
-# Reduce to 10% of the data for testing
-combined_df = combined_df.sample(frac=1, random_state=42)
-
 # Convert the reduced DataFrame back to a Hugging Face Dataset
 combined_dataset = Dataset.from_pandas(combined_df)
 
